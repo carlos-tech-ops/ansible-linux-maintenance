@@ -1,0 +1,5 @@
+---
+- name: Create Linux User
+  ansible:builtin.user:
+    name: "{{ new_user }}"
+    state: present
