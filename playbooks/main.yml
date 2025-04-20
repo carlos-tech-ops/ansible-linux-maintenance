@@ -1,8 +1,4 @@
 ---
-- name: DEBUG — I’m inside user_provision/tasks/main.yml
-  debug:
-    msg: "This role is executing correctly."
-
 - name: Create Linux User
   ansible.builtin.user:
     name: "{{ new_user }}"
