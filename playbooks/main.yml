@@ -3,16 +3,5 @@
   hosts: all
   become: true
 
-  tasks:
-    - name: Update all packages
-      dnf:
-        name: "*"
-        state: latest
-
-    - name: Gather system info
-      setup:
-
-    - name: Save system info to /var/log/system_info.log
-      copy:
-        content: "{{ ansible_facts | to_nice_yaml }}"
-        dest: /var/log/system_info.log
+  roles: 
+    - user_provision
