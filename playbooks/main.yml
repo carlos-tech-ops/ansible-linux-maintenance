@@ -1,1 +1,7 @@
+---
+- name: Linux Automation
+  hosts: all
+  become: true
 
+  roles:
+    - user_provision
