@@ -1,7 +1,7 @@
 ---
-- name: Create Linux User
+- name: Linux Maintenance Automation
+  hosts: all
   become: true
-  user:
-    name: "{{ new_user }}"
-    state: present
-  
+
+  roles:
+    - user_provision
