@@ -1,6 +1,6 @@
----
 - name: Create Linux User
-  ansible:builtin.user:
+  ansible.builtin.user:
     name: "{{ new_user }}"
     state: present
-  become: true
+    shell: /bin/bash
+    create_home: yes
