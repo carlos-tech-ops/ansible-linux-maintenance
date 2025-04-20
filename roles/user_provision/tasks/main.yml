@@ -3,3 +3,4 @@
   ansible:builtin.user:
     name: "{{ new_user }}"
     state: present
+  become: true
