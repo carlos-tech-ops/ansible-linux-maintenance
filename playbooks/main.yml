@@ -1,0 +1,7 @@
+---
+- name: Linux Maintenance Automation
+  hosts: all
+  become: true
+
+  roles:
+    - user_provision
