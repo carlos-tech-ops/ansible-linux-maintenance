@@ -1,8 +1,6 @@
 # ansible-linux-maintenance
 
-Automated Linux maintenance with Ansible.  
-Modular, secure, and fully documented for real-world automation across Fedora servers.
-
+Modular Ansible automation for Linux systems. SSH-based execution, role-driven structure, and sudo privilege escalation. Built for precision, auditability, and DevSecOps readiness.
 ---
 
 ## Phase 2 – First Ansible Playbook Execution ✅  
@@ -67,3 +65,17 @@ Execute multiple Ansible roles from one playbook with tag-based precision.
 ```bash
 ansible-playbook playbooks/main.yml --tags user --ask-become-pass
 ansible-playbook playbooks/main.yml --tags file --ask-become-pass
+```
+---
+
+## About the Author
+
+**Carlos Semeão** is a Cloud Security and DevOps learner with a zero-fluff approach to automation.  
+From cleaning trains to orchestrating Linux systems with Ansible, his work reflects tactical discipline, remote-first design, and real-world readiness.
+
+- **GitHub:** [carlos-tech-ops](https://github.com/carlos-tech-ops)  
+- **LinkedIn:** [Carlos Semeão](https://www.linkedin.com/in/carlos-semeao-04938a357/)  
+- **Toolset:** macOS, Fedora, Ansible, GitHub, SSH, YAML  
+- **Mission:** Cloud automation mastery. No shortcuts. No noise. Just execution.
+
+---
