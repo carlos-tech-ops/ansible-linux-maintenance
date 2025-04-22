@@ -1,0 +1,8 @@
+---
+- name: Create ops.txt file in /opt
+  ansible.builtin.copy:
+    content: "Rewritten by Ansible on {{ ansible_date_time.date }} at {{ ansible_date_time.time }}"
+    dest: /opt/ops.txt
+    owner: root
+    group: root
+    mode: '0444'
