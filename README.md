@@ -70,7 +70,7 @@ ansible-playbook playbooks/main.yml --tags file --ask-become-pass
 
 ## About the Author
 
-**Carlos Semeão** is a Cloud Security and DevOps learner with a zero-fluff approach to automation.  
+**Carlos Semeao** is a Cloud Security and DevOps learner with a zero-fluff approach to automation.  
 From cleaning trains to orchestrating Linux systems with Ansible, his work reflects tactical discipline, remote-first design, and real-world readiness.
 
 - **GitHub:** [carlos-tech-ops](https://github.com/carlos-tech-ops)  
