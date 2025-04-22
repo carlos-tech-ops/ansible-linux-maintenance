@@ -3,7 +3,7 @@
   hosts: all
   become: true
   roles:
-    - user_provision
+    - name: user_provision
       tags: user
-    - file_ops
+    - name: file_ops
       tags: file
