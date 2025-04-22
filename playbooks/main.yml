@@ -1,7 +1,8 @@
 ---
-- name: Linux Maintenance Automation Suite
+- name: Apply server configurations
   hosts: all
   become: true
+
   roles:
     - role: user_provision
       tags: user
