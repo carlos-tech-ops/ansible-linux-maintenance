@@ -1,0 +1,16 @@
+---
+- name: Create secure directory
+  file:
+    path: /opt/secure_logs
+    state: directory
+    owner: root
+    group: root
+    mode: '0750'
+
+- name: Create alert.log file
+  copy:
+    content: "SECURITY LOG CREATED: {{ ansible_date_time.date }} {{ ansible_date_time.time }}\n"
+    dest: /opt/secure_logs/alert.log
+    owner: root
+    group: root
+    mode: '0640'
