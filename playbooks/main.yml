@@ -4,3 +4,10 @@
   become: true
   roles:
     - user_provision
+
+---
+- name: Manage secure logs
+  hosts: all
+  become: true
+  roles:
+    - file_management
