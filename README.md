@@ -66,6 +66,30 @@ Execute multiple Ansible roles from one playbook with tag-based precision.
 ansible-playbook playbooks/main.yml --tags user --ask-become-pass
 ansible-playbook playbooks/main.yml --tags file --ask-become-pass
 ```
+
+## Phase 4: File Permissions & Access Control (Completed)
+
+**Objective:** Understand and validate Linux file permissions using `chmod`, `chown`, and `su` across different user roles.
+
+### Scenario:
+- `secret.txt`: Root-owned, permission `750` — must be inaccessible to normal users.
+- `shared.txt`: Owned by user `carlos`, group `devops`, permission `640` — must allow user writes, group reads.
+
+### Steps:
+1. Created `/home/carlos/week2-lab` with correct ownership and permissions.
+2. Root configured:
+   - `secret.txt` owned by root:root with `chmod 750`
+   - `shared.txt` owned by carlos:devops with `chmod 640`
+3. Switched to `carlos` user:
+   - Confirmed **no access** to `secret.txt`
+   - Confirmed **read/write** access to `shared.txt`
+
+### Result:
+Permission model worked as expected — demonstrating correct application of Linux access control.
+
+**Status:** Completed  
+**Next:** Ownership inheritance, sticky bits, ACLs, and real-world permission audits.
+
 ---
 
 ## About the Author
