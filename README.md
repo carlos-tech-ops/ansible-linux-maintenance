@@ -103,3 +103,49 @@ From cleaning trains to orchestrating Linux systems with Ansible, his work refle
 - **Mission:** Cloud automation mastery. No shortcuts. No noise. Just execution.
 
 ---
+
+## Troubleshooting Logs
+
+### Log ID: T2025-04-20-DEVOPS-USER – Ansible User Creation Failure
+
+**Date:** 20 April 2025  
+**Host:** Fedora 39  
+**Control Node:** macOS Ventura 14.4  
+**Tool:** Ansible  
+**Playbook:** `create-user.yml`
+
+---
+
+**Issue Summary:**  
+Ansible playbook completed without errors but failed to create the `devops_user`. Manual inspection showed the user didn’t exist. No failure message was returned.
+
+---
+
+**Symptoms:**  
+- Ansible showed “ok” status  
+- `id devops_user` returned “No such user”  
+- Manual creation using `sudo useradd devops_user` worked  
+- Ansible task showed `changed=0`, suggesting it didn’t execute
+
+---
+
+**Troubleshooting Steps:**  
+1. Confirmed SSH access between Mac and Fedora  
+2. Checked YAML syntax (no errors)  
+3. Reviewed Ansible output — noted no privilege escalation  
+4. Added `become: yes` under the user task  
+5. Re-ran playbook — user was created successfully
+
+---
+
+**Fix:**
+```yaml
+- name: Create secure user
+  user:
+    name: devops_user
+    groups: sudo
+    shell: /bin/bash
+    state: present
+  become: yes
+
+---
